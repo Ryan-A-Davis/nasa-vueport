@@ -1,15 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container-fluid">
+    <h1>
+      Nasa
+      <img
+        style="max-height: 20px"
+        alt="Vue logo"
+        src="./assets/logo.png"
+      >
+      uePort
+    </h1>
+    <date-component />
+  </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import DateComponent from './components/DateComponent'
+import { AppState } from './AppState'
+import { computed } from 'vue'
 export default {
   name: 'App',
+  setup () {
+    return {
+      appState: computed(() => AppState)
+    }
+  },
   components: {
-    HelloWorld
+    DateComponent
   }
 }
 </script>
